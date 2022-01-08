@@ -1,0 +1,28 @@
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 14px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=checkbox] {
+  margin-right: 5px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.card {
+  width: 50%;
+  box-shadow: 1px 1px 5px #ddd;
+  border-radius: 5px;
+  padding: 20px;
+}

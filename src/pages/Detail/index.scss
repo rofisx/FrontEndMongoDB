@@ -1,0 +1,44 @@
+.btn {
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  margin: 0px 3px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #0abde3;
+  &:hover {
+    background-color:#48dbfb;
+  }
+}
+
+.btn-danger {
+  background-color: #ee5253;
+  &:hover {
+    background-color:#ff6b6b;
+  }
+}
+
+.btn-warning {
+  background-color: #ff9f43;
+  &:hover {
+    background-color:#feca57;
+  }
+}
+
+.btn-info {
+  background-color: #2e86de;
+  &:hover {
+    background-color:#54a0ff;
+  }
+}
+
+.btn-sm {
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 2px;
+}
