@@ -54,7 +54,7 @@ const Edit = () => {
   const updateProduct = async (e) => {
     e.preventDefault();
     // await axios.patch(`http://localhost:3009/v2/product/update/${id}`, 
-    await axios.patch(`https://backend-rofi.herokuapp.com/update/${id}`, 
+    await axios.patch(`https://backend-rofi.herokuapp.com/v2/product/update/${id}`, 
     {name,price,stock,status})
     .then(() => {
         history.push('/');
