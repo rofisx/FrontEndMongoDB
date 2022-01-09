@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Input from "../../components/Input";
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const Edit = () => {
   let [name, setName] = useState('');  
@@ -11,9 +13,35 @@ const Edit = () => {
   let { id }  = useParams();
   let history = useHistory();
 
+  // const formik = useFormik({
+  //   initialValues:{
+  //     name:'',
+  //     price:'',
+  //     stock:'',
+  //     status:false
+  //   },
+  //   validationSchema: Yup.object({
+  //     name:Yup.string()
+  //     .min(2,"Minimal 2 Karakter")
+  //     .required('Silahkan masukan nama anda'),
+  //     price:Yup.number('Harus angka')
+  //     .required('Harga harus di isi')
+  //     .moreThan(999,'Harga minimal 1000')
+  //     .integer('Harus Angka'),
+  //     stock:Yup.number()
+  //     .min(1,"minimal 1 digit")
+  //     .required('Stock harus di isi')
+  //     .positive('Tidak boleh kurang dari satu')
+  //   }),
+  //   onSubmit: value =>{
+  //     updateProduct(value);
+  //   }   
+  // });
+
   const dataProduct = async () =>{
         try{
-          const response = await axios.get(`http://localhost:3009/v2/product/${id}`);
+          // const response = await axios.get(`http://localhost:3009/v2/product/${id}`);
+          const response = await axios.get(`https://backend-rofi.herokuapp.com/v2/product/${id}`);
           const data = await response.data;
           setName(data.name);
           setPrice(data.price);
@@ -25,7 +53,8 @@ const Edit = () => {
     }   
   const updateProduct = async (e) => {
     e.preventDefault();
-    await axios.patch(`http://localhost:3009/v2/product/update/${id}`, 
+    // await axios.patch(`http://localhost:3009/v2/product/update/${id}`, 
+    await axios.patch(`https://backend-rofi.herokuapp.com/update/${id}`, 
     {name,price,stock,status})
     .then(() => {
         history.push('/');

@@ -20,7 +20,9 @@ const Home = (id) => {
   const dataProduct = async (values) =>{
     if(value){
         try{
-          const response = await axios.get(`http://localhost:3009/v2/product?search=${values}`);
+          // const response = await axios.get(`http://localhost:3009/v2/product?search=${values}`);
+          const response = await axios.get(`https://backend-rofi.herokuapp.com/v2/product?search=${values}`);
+          
           const data = await response.data;
           // console.log(data);
           setProduct(data);
@@ -29,7 +31,8 @@ const Home = (id) => {
         }
       }else{
           try{
-            const response = await axios.get('http://localhost:3009/v2/product');
+            // const response = await axios.get('http://localhost:3009/v2/product');
+            const response = await axios.get(`https://backend-rofi.herokuapp.com/v2/product`);
             const data = await response.data;
             // console.log(data);
             setProduct(data);
@@ -41,7 +44,8 @@ const Home = (id) => {
 
     const deleteProduct = async (id) => {
       try{
-        await axios.delete(`http://localhost:3009/v2/product/delete/${id}`)
+        // await axios.delete(`http://localhost:3009/v2/product/delete/${id}`)
+        await axios.delete(`https://backend-rofi.herokuapp.com/v2/product/delete/${id}`)
         // console.log(id)        
         dataProduct();
       }catch(e){

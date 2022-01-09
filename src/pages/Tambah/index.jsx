@@ -43,7 +43,8 @@ const Tambah = () => {
   const storeProduct = async (value) => {
     // e.preventDefault();
     try{
-      await axios.post('http://localhost:3009/v2/product/store', 
+      // await axios.post('http://localhost:3009/v2/product/store', 
+      await axios.post('https://backend-rofi.herokuapp.com/v2/product/store', 
       // {name,price:parseInt(price),stock:parseInt(stock),status:stats})
       value)
       .then(() => {

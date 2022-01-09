@@ -11,7 +11,8 @@ const Detail = () => {
 
   const dataProduct = async () =>{
         try{
-          const response = await axios.get(`http://localhost:3009/v2/product/${id}`);
+          // const response = await axios.get(`http://localhost:3009/v2/product/${id}`);
+          const response = await axios.get(`https://backend-rofi.herokuapp.com/v2/product/${id}`);
           const data = await response.data;
           setProduct(data);          
         }catch(e){
