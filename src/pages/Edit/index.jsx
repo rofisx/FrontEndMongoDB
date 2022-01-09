@@ -2,8 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import Input from "../../components/Input";
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
+// import { useFormik } from 'formik';
+// import * as Yup from 'yup';
 
 const Edit = () => {
   let [name, setName] = useState('');  
